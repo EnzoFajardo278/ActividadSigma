@@ -1,56 +1,69 @@
-# Welcome to your Expo app 👋
+# Actividad SIGMA
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Descripción
 
-## Get started
+En esta actividad se realizó la navegación entre diferentes pantallas de la aplicación SIGMA utilizando Expo Router.
 
-1. Install dependencies
+Se creó una pantalla de inicio con tres opciones: Equipos, Tareas y Nueva tarea. También se implementó una ruta dinámica para poder seleccionar un equipo y mostrar su ID.
 
-   ```bash
-   npm install
-   ```
+## Funcionalidades
 
-2. Start the app
+- Menú principal con las opciones Equipos, Tareas y Nueva tarea.
+- Navegación entre pantallas utilizando Link.
+- Pantalla de equipos con dos equipos para seleccionar.
+- Pantalla de detalle que muestra el ID del equipo seleccionado.
+- Uso de Stack para la navegación entre pantallas.
 
-   ```bash
-   npx expo start
-   ```
+## Tecnologías utilizadas
 
-In the output, you'll find options to open the app in a
+- React Native
+- Expo
+- Expo Router
+- TypeScript
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Estructura del proyecto
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Dentro de la carpeta `src/app` se encuentran las pantallas:
 
-## Get a fresh project
+- `index.tsx`: pantalla principal con el menú.
+- `equipos.tsx`: muestra los equipos disponibles.
+- `tareas.tsx`: pantalla de tareas.
+- `nuevatarea.tsx`: pantalla de nueva tarea.
+- `_layout.tsx`: contiene el Stack de navegación.
+- `equipos/[id].tsx`: recibe y muestra el ID del equipo seleccionado.
 
-When you're ready, run:
+## Cómo ejecutar el proyecto
 
-```bash
-npm run reset-project
-```
+Para ejecutar el proyecto es necesario tener Node.js instalado.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+1. Descargar el proyecto desde GitHub.
+2. Abrir la carpeta en Visual Studio Code.
+3. Abrir una terminal y ejecutar:
 
-### Other setup steps
+   `npm install`
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+4. Después iniciar la aplicación con:
 
-## Learn more
+   `npx expo start`
 
-To learn more about developing your project with Expo, look at the following resources:
+5. Abrir la aplicación utilizando Expo Go en el celular o desde el navegador
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Capturas de pantalla
 
-## Join the community
+Inicio
+![Inicio](capturas/Inicio.jpeg)
 
-Join our community of developers creating universal apps.
+Equipos
+![Equipo](capturas/Equipos.jpeg)
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Detalle Equipo 1
+![Equipo1](capturas/DetalleEquipo1.jpeg)
+
+Detalle Equipo 2
+![Equipo2](capturas/DetalleEquipo2.jpeg)
+
+Tareas
+![Tarea](capturas/Tarea.jpeg)
+
+Nueva Tarea
+![NuevaTarea](capturas/NuevaTarea.jpeg)

@@ -1,10 +1,10 @@
 import { ThemedText } from "@/components/themed-text";
 import { Link } from "expo-router";
-import { Pressable } from "react-native";
+import { Pressable, View } from "react-native";
 
 export default function Equipos() {
     return (
-    <view>      
+    <View>      
         <Link
             href={{ pathname: "/equipos/[id]", params: { id: "1" } }}
             asChild>
@@ -24,6 +24,6 @@ export default function Equipos() {
             </ThemedText>
             </Pressable>
         </Link>
-</view>  
+</View>  
     )
 }
