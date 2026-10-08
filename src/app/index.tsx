@@ -1,9 +1,9 @@
 import * as Device from 'expo-device';
-import { Platform, StyleSheet } from 'react-native';
+import { Link } from 'expo-router';
+import { Platform, Pressable, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { AnimatedIcon } from '@/components/animated-icon';
-import { HintRow } from '@/components/hint-row';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { WebBadge } from '@/components/web-badge';
@@ -35,24 +35,36 @@ export default function HomeScreen() {
         <ThemedView style={styles.heroSection}>
           <AnimatedIcon />
           <ThemedText type="title" style={styles.title}>
-            Welcome to&nbsp;Expo
+            SIGMA
           </ThemedText>
         </ThemedView>
 
         <ThemedText type="code" style={styles.code}>
-          get started
+          Selecciona una de las opciones del menu para continuar
         </ThemedText>
 
         <ThemedView type="backgroundElement" style={styles.stepContainer}>
-          <HintRow
-            title="Try editing"
-            hint={<ThemedText type="code">src/app/index.tsx</ThemedText>}
-          />
-          <HintRow title="Dev tools" hint={getDevMenuHint()} />
-          <HintRow
-            title="Fresh start"
-            hint={<ThemedText type="code">npm run reset-project</ThemedText>}
-          />
+        <Link href="/equipos" asChild>
+          <Pressable style={styles.menuButton}>
+            <ThemedText type="smallBold" style={styles.menuButtonText}>
+              Equipos
+            </ThemedText>
+          </Pressable>
+        </Link>
+        <Link href="/tareas" asChild>
+          <Pressable style={styles.menuButton}>
+            <ThemedText type="smallBold" style={styles.menuButtonText}>
+              Tareas
+            </ThemedText>
+          </Pressable>
+        </Link>
+        <Link href="/nuevatarea" asChild>
+          <Pressable style={styles.menuButton}>
+            <ThemedText type="smallBold" style={styles.menuButtonText}>
+              Nueva Tarea
+            </ThemedText>
+          </Pressable>
+        </Link>
         </ThemedView>
 
         {Platform.OS === 'web' && <WebBadge />}
@@ -95,4 +107,18 @@ const styles = StyleSheet.create({
     paddingVertical: Spacing.four,
     borderRadius: Spacing.four,
   },
+ 
+  menuButton: {
+  backgroundColor: '#1E3A8A',
+  borderRadius: 16,
+  paddingVertical: 18,
+  paddingHorizontal: 24,
+  alignItems: 'center',
+  alignSelf: 'stretch',
+  elevation: 4,
+},
+menuButtonText: {
+  color: '#FFFFFF',
+  fontSize: 16,
+},
 });
